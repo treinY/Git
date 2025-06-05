@@ -1,0 +1,128 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0e7ef 0%, #f8fafc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', 'Myanmar3', 'Helvetica Neue', Arial, sans-serif;
+  transition: background 0.5s;
+}
+
+.clock-container {
+  background: rgba(255,255,255,0.8);
+  border-radius: 30px;
+  box-shadow: 0 8px 40px 0 rgba(40,60,100,0.12);
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+canvas#clock {
+  margin: 0 auto 18px;
+  display: block;
+  background: transparent;
+}
+
+.score-section {
+  margin-top: 12px;
+  font-size: 1.3rem;
+  color: #5b6b7d;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: rgba(240,245,255,0.8);
+  padding: 8px 16px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(180,190,210,0.11);
+}
+
+.score-label {
+  margin-right: 8px;
+  color: #6e7380;
+}
+
+.extras {
+  margin-top: 22px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#greeting {
+  margin: 10px 0 0 0;
+  font-size: 1.1rem;
+  color: #8796a0;
+  letter-spacing: 0.03em;
+}
+
+#toggle-theme {
+  background: linear-gradient(90deg, #c8d8fa 0%, #e9f7fa 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 7px 20px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #3e4e68;
+  font-weight: 600;
+  box-shadow: 0 1px 6px rgba(130,165,220,0.15);
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+
+#toggle-theme:hover {
+  background: linear-gradient(90deg,#b0c6f8 0%,#d4f7fd 100%);
+  color: #234060;
+}
+
+/* Progress bar animation for hour */
+#progressbar-container {
+  width: 90%;
+  height: 7px;
+  background: #e6eef7;
+  border-radius: 6px;
+  margin-top: 15px;
+  overflow: hidden;
+  box-shadow: 0 1px 8px rgba(120,140,180,0.09);
+}
+
+#progressbar {
+  height: 100%;
+  background: linear-gradient(90deg,#6e98e5 0%,#a7f5e1 100%);
+  border-radius: 6px 0 0 6px;
+  width: 0;
+  transition: width 0.5s cubic-bezier(.43,.15,.48,1.18);
+}
+
+body.dark {
+  background: linear-gradient(135deg,#162033 0%,#273149 100%);
+}
+
+body.dark .clock-container {
+  background: rgba(30,34,54,0.92);
+  box-shadow: 0 10px 32px 0 rgba(0,0,0,0.25);
+}
+
+body.dark .score-section, body.dark #greeting {
+  background: rgba(40,48,68,0.7);
+  color: #b3ccfa;
+}
+
+body.dark #progressbar-container {
+  background: #152242;
+}
+
+body.dark #progressbar {
+  background: linear-gradient(90deg,#55d6e7 0%,#f5b6e1 100%);
+}
+
+body.dark #toggle-theme {
+  background: linear-gradient(90deg,#253a5b 0%,#3d3d5a 100%);
+  color: #b7dbff;
+}
+
+body.dark #toggle-theme:hover {
+  background: linear-gradient(90deg,#37538d 0%,#505070 100%);
+  color: #fff;
+}
